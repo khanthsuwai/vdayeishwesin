@@ -1,0 +1,127 @@
+.passcode-form {
+    width: 90%;
+    max-width: 700px;
+    padding: 20px;
+    border: 5px solid lightpink;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#content {
+    display: none;
+    text-align: center;
+}
+
+.vday {
+    font-family: "Josefin Sans", serif;
+    color: lightpink;
+}
+
+input {
+    color: white;
+}
+
+#passcode-display {
+    background-color: lightpink;
+    font-size: 20px;
+    border: none;
+    text-align: center;
+}
+
+#passcode-display::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.number-pad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 200px;
+    margin: auto;
+}
+
+.number-pad button {
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: lightpink;
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+}
+
+.submit_btn {
+    font-size: 20px;
+    color: white;
+    background-color: lightpink;
+    border: none;
+}
+
+/* Together */
+
+.together {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    background-color: lightpink;
+    font-family: "Fredoka", serif;
+}
+
+#time-title,
+#clock {
+    font-family: "Fredoka", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 24px;
+    color: lightpink;
+    margin-top: 20px;
+}
+
+.buttons {
+    font-family: "Fredoka", serif;
+    font-size: 18px;
+    color: white;
+    padding: 10px 20px;
+    background-color: lightpink;
+    border: none;
+    text-align: center;
+}
+
+.buttons:hover {
+    color: lightpink;
+    border: 2px solid lightpink;
+}
+
+.emoji {
+    color: lightpink;
+    font-size: 20px;
+}
+
+/* Photobooth */
+
+.phototitle {
+    color: lightpink;
+    font-family: "Caveat", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Envlope */
+
+.border_line {
+    border: 3px solid lightpink;
+    border-radius: 30px;
+}
+
+.border_line p {
+    font-family: "Josefin Sans", serif;
+}

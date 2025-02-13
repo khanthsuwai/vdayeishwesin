@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+            background-color: #fff5f8;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="passcode-form" class="container passcode-form">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 col-sm-12 text-center">
+                <img src="img/photo1 (6).jpg" alt="" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6 col-sm-12 mt-4">
+                <input type="password" id="passcode-display" class="form-control text-center mb-3"
+                    placeholder="Enter your password" readonly>
+                <div class="number-pad">
+                    <button onclick="appendNumber(1)">1</button>
+                    <button onclick="appendNumber(2)">2</button>
+                    <button onclick="appendNumber(3)">3</button>
+                    <button onclick="appendNumber(4)">4</button>
+                    <button onclick="appendNumber(5)">5</button>
+                    <button onclick="appendNumber(6)">6</button>
+                    <button onclick="appendNumber(7)">7</button>
+                    <button onclick="appendNumber(8)">8</button>
+                    <button onclick="appendNumber(9)">9</button>
+                    <button onclick="clearPasscode()">C</button>
+                    <button onclick="appendNumber(0)">0</button>
+                    <button onclick="backspace()">←</button>
+                </div>
+                <button onclick="checkPasscode()" class="submit_btn mt-3 px-3 py-2 rounded-pill">Submit</button>
+                <p id="error" class="text-danger mt-2"></p>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="container">
+        <div class=" shadow p-3 mb-5 bg-body-tertiary border_line">
+            <p class="p-3">Happy Valentine's Day, Shwe Sinn!&#128151;
+                Every moment with you feels like a beautiful dream I never want to wake up from. Your laughter lights up
+                my world &#127757;, your kindness fills my heart, and your love completes me in ways I never knew
+                possible. I'm so
+                grateful to have you by my side, not just today, but every day.&#128525; Thank you for being the most
+                wonderful
+                part of my life.
+                I love you more than words can ever say, now and always.&#128158;
+
+            </p>
+            <p class="text-end">Forever yours,</p>
+            <p class="text-end">Feel free to personalize it further!</p>
+        </div>
+        <a href="./photobooth.html" class="btn btn-md rounded-pill  mt-4 buttons"><i
+                class="fa-solid fa-arrow-right"></i> Click Me</a>
+        <div class=" text-center mt-3 emoji">
+            <i class="fa-solid fa-heart py-2"></i>
+            <i class="fa-solid fa-paw py-2"></i>
+            <i class="fa-solid fa-heart py-2"></i>
+            <i class="fa-solid fa-paw py-2"></i>
+            <i class="fa-solid fa-heart py-2"></i>
+            <i class="fa-solid fa-paw py-2"></i>
+        </div>
+    </div>
+    <script>
+        let passcode = "";
+
+        function appendNumber(num) {
+            if (passcode.length < 6) { // Limit passcode length to 6 digits
+                passcode += num;
+                document.getElementById('passcode-display').value = passcode.replace(/./g, '*');
+            }
+        }
+
+        function clearPasscode() {
+            passcode = "";
+            document.getElementById('passcode-display').value = "";
+        }
+
+        function backspace() {
+            passcode = passcode.slice(0, -1);
+            document.getElementById('passcode-display').value = passcode.replace(/./g, '*');
+        }
+
+        function checkPasscode() {
+            const correctPasscode = "2003"; // Change this to your desired passcode
+            if (passcode === correctPasscode) {
+                document.getElementById('passcode-form').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                document.getElementById('error').innerText = "Incorrect password. Hint: Maybe it's your birthday year!";
+                clearPasscode();
+            }
+        }
+    </script>
+</body>
+
+</html>
